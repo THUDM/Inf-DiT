@@ -19,31 +19,47 @@ Official implementation of Inf-DiT: Upsampling Any-Resolution Image with Memory-
 
 Diffusion models have shown remarkable performance in image generation in recent years. However, due to a quadratic increase in memory during generating ultra-high-resolution images (e.g. 4096 × 4096), the resolution of generated images is often limited to 1024×1024. In this work, we propose a unidirectional block attention mechanism that can adaptively adjust the memory overhead during the inference process and handle global dependencies. Building on this module, we adopt the DiT structure for upsampling and develop an infinite super-resolution model capable of upsampling images of various shapes and resolutions. Comprehensive experiments show that our model achieves excellent performance in generating ultra-high-resolution images. Compared to commonly used UNet structures, our model can save more than 5× memory when generating 4096 × 4096 images.
 
-## 👀 Super-Resolution results
-
-### （click to see the detail)
-
-[<img src="image\README\sr1.png" alt="woman" style="zoom: 54%;" />](https://imgsli.com/MjYyMTU3)      
-
-[<img src="image\README\sr2.png" alt="woman" style="zoom: 50%;" />](https://imgsli.com/MjYyMTU5)      
-
 
 
 ## 🆚 Ultra-high-resolution generation Demo vs other methods
 
 ### （click to see the detail)
 
-### vs DemoFusion(2048*2048)
+### vs DemoFusion
 
-[<img src="image\README\vsdemofusion\woman.png" alt="woman" style="zoom: 33%;" />](https://imgsli.com/MjYxOTA1)                                      [<img src="image\README\vsdemofusion\zoomin.png" alt="woman" style="zoom: 33%;" />](https://imgsli.com/MjYyMDU2)
+[<img src="image\README\vsdemofusion\woman.png" alt="woman" height="400px" />](https://imgsli.com/MjYxOTA1)                          [<img src="image\README\vsdemofusion\zoomin.png" alt="woman" height="400px"/>](https://imgsli.com/MjYyMDU2)
 
-### vs BSRGAN(2048*2048)
+*Caption: A digital painting of a young goddess with flower and fruit adornments evoking symbolic metaphors.*
 
-[<img src="image\README\vsbsrgan\cat.png" alt="woman" style="zoom: 33%;" />](https://imgsli.com/MjYyMTE5)                                      [<img src="image\README\vsbsrgan\zoomin.png" alt="cat" style="zoom: 33%;" />](https://imgsli.com/MjYyMTIx)
+*Resolution: $2048\times 2048$*
+
+### vs BSRGAN
+
+[<img src="image\README\vsbsrgan\cat.png" alt="woman" height="400px" />](https://imgsli.com/MjYyMTE5)                          [<img src="image\README\vsbsrgan\zoomin.png" alt="cat" height="400px" />](https://imgsli.com/MjYyMTIx)
+
+*Caption: The image depicts a concept art of Schrodinger's cat in a box with an abstract background of waves and particles in a dynamic composition.*
+
+*Resolution: $2048\times 2048$*
 
 ### vs Patch-Super-Resolution(4096*4096)
 
-[<img src="image\README\vspatch\man.png" alt="woman" style="zoom: 33%;" />](https://imgsli.com/MjYyMTI4)                                      [<img src="image\README\vspatch\zoomin.png" alt="woman" style="zoom: 33%;" />](https://imgsli.com/MjYyMTMw)
+[<img src="image\README\vspatch\man.png" alt="woman" height="400px" />](https://imgsli.com/MjYyMTI4)                          [<img src="image\README\vspatch\zoomin.png" alt="woman" height="400px" />](https://imgsli.com/MjYyMTMw)
+
+*Caption: A portrait of a character in a scenic environment.*
+
+*Resolution: $4096\times 4096$*
+
+## 👀 Super-Resolution results
+
+### （click to see the detail)
+
+[<img src="image\README\sr1.png" alt="woman" style="zoom: 54%;" />](https://imgsli.com/MjYyMTU3)      
+
+*Resolution: $1920\times 1080$*
+
+[<img src="image\README\sr2.png" alt="woman" style="zoom: 50%;" />](https://imgsli.com/MjYyMTU5)    
+
+*Resolution: $1920\times 768$*
 
 ## ⚙️ Setup
 
