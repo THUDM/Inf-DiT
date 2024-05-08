@@ -55,7 +55,7 @@ Diffusion models have shown remarkable performance in image generation in recent
 
 [<img src="image\README\sr1.png" alt="woman" style="zoom: 54%;" />](https://imgsli.com/MjYyMTU3)      
 
-*Resolution: *$1920\times 1080$
+*Resolution:* $1920\times 1080$
 
 [<img src="image\README\sr2.png" alt="woman" style="zoom: 50%;" />](https://imgsli.com/MjYyMTU5)    
 
