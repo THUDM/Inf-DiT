@@ -31,7 +31,7 @@ Diffusion models have shown remarkable performance in image generation in recent
 
 *Caption: A digital painting of a young goddess with flower and fruit adornments evoking symbolic metaphors.*
 
-*Resolution: $2048\times 2048$*
+*Resolution:* $2048\times 2048$
 
 ### vs BSRGAN
 
@@ -39,7 +39,7 @@ Diffusion models have shown remarkable performance in image generation in recent
 
 *Caption: The image depicts a concept art of Schrodinger's cat in a box with an abstract background of waves and particles in a dynamic composition.*
 
-*Resolution: $2048\times 2048$*
+*Resolution:* $2048\times 2048$
 
 ### vs Patch-Super-Resolution(4096*4096)
 
@@ -47,7 +47,7 @@ Diffusion models have shown remarkable performance in image generation in recent
 
 *Caption: A portrait of a character in a scenic environment.*
 
-*Resolution: $4096\times 4096$*
+*Resolution:* $4096\times 4096$
 
 ## 👀 Super-Resolution results
 
@@ -55,11 +55,11 @@ Diffusion models have shown remarkable performance in image generation in recent
 
 [<img src="image\README\sr1.png" alt="woman" style="zoom: 54%;" />](https://imgsli.com/MjYyMTU3)      
 
-*Resolution: $1920\times 1080$*
+*Resolution: *$1920\times 1080$
 
 [<img src="image\README\sr2.png" alt="woman" style="zoom: 50%;" />](https://imgsli.com/MjYyMTU5)    
 
-*Resolution: $1920\times 768$*
+*Resolution:* $1920\times 768$
 
 ## ⚙️ Setup
 
