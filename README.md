@@ -80,4 +80,4 @@ Please cite us if our work is useful for your research.
 
 ## 📭 Contact
 
-If you have any comments or questions, feel free to contact [Zhuoyi Yang](zhuoyiyang2000@gmail.com) or [Heyang Jiang](jianghy0581@gmail.com).
+If you have any comments or questions, feel free to contact zhuoyiyang2000@gmail.com or jianghy0581@gmail.com.
