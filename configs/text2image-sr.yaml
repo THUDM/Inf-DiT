@@ -1,0 +1,53 @@
+modules:
+  position_embedding_config:
+    target: dit.embeddings.RotaryPositionEmbedding
+    params:
+      num_patches: 1024
+      hidden_size: 1024
+      hidden_size_head: 64
+      pix2struct: True
+  image_encoder_config:
+    target: dit.encoders.OpenClipImageEncoder
+    params:
+      image_size: 224
+modeling:
+  precond_config:
+    target: dit.precond.EDMPrecond
+  loss_config:
+    target: dit.loss.ConcatSRLoss2
+    params:
+      sigma_sampler_config:
+        target: dit.sigma_sampling.EDMSampling
+        params:
+          p_mean: -1.0
+          p_std: 1.4
+      weighting_config:
+        target: dit.weighting.EDMWeighting
+  sampler_config:
+    target: dit.sampling.samplers.ConcatSRHeunEDMSampler
+    params:
+      num_steps: 20
+      discretization_config:
+        target: dit.sampling.discretizers.EDMDiscretization
+        params:
+          sigma_min: 0.002
+          sigma_max: 40
+      guider_config:
+        target: dit.sampling.guiders.IdentityGuider
+data:
+  target: dit.data.Text2ImageSRWebDataset
+  params:
+    sft: False
+    random_crop: True
+    lr_size: 128
+    sr_size: 512
+    do_degradation: True
+    do_realesr: True
+    only_degradation: True
+    realesr_config: configs/degradation_2.yaml
+    filters:
+      aesthetic_score_laion_v2:
+        val: 5.0
+        greater: True
+    extra_texts:
+      caption: 1

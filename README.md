@@ -8,18 +8,26 @@ Official implementation of Inf-DiT: Upsampling Any-Resolution Image with Memory-
 
 ## 🆕 News
 
+* **2024.05.20**: This code and model weight is released.
 * **2024.05.08**: This repo is released.
 
 ## ⏳ TODO
 
-- [ ] Code(coming soon!!!)
+- [x] Code release
+- [x] Model weight release
+- [ ] Complete the explanation for the inference code and hyperparameter
 - [ ] Demo
 
 ## 🔆 Abstract
 
 Diffusion models have shown remarkable performance in image generation in recent years. However, due to a quadratic increase in memory during generating ultra-high-resolution images (e.g. 4096 × 4096), the resolution of generated images is often limited to 1024×1024. In this work, we propose a unidirectional block attention mechanism that can adaptively adjust the memory overhead during the inference process and handle global dependencies. Building on this module, we adopt the DiT structure for upsampling and develop an infinite super-resolution model capable of upsampling images of various shapes and resolutions. Comprehensive experiments show that our model achieves excellent performance in generating ultra-high-resolution images. Compared to commonly used UNet structures, our model can save more than 5× memory when generating 4096 × 4096 images.
 
+## 📚 Model Inference
+Model weights can be downloaded from [here](https://cloud.tsinghua.edu.cn/f/6e313f7e1236468e973b/?dl=1)
 
+1. Download the model weights and put them in the 'ckpt'.
+2. `bash generate_sr_big_cli.sh`
+3. You can change the "inference_type"(line 27 in generate_sr_big_cli.sh) to "ar"(parallel size=1), "ar2"(parallel size = block_batch(line 28)) or "full"(generate the entire image in one forward). 
 
 ## 🆚 Ultra-high-resolution generation Demo vs other methods
 
