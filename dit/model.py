@@ -681,7 +681,6 @@ class DiffusionEngine(BaseModel):
             cached = [None] * block_w
             images = images
 
-            block_batch = 16
             block_bsize = block_size * block_batch
             vit_block_bsize = vit_block_size * block_batch
             assert block_h % block_batch == 0
