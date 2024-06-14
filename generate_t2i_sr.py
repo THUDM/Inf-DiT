@@ -31,7 +31,7 @@ import cv2
 def read_from_cli():
     try:
         while True:
-            x = input('Please input English text (Ctrl-D quit): ').strip()
+            x = input('Please input low resolution image path (Ctrl-D quit): ').strip()
             image = Image.open(x).convert('RGB')
             # to tensor
             image = transforms.ToTensor()(image) * 2 - 1

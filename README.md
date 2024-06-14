@@ -26,7 +26,7 @@ Diffusion models have shown remarkable performance in image generation in recent
 Model weights can be downloaded from [here](https://cloud.tsinghua.edu.cn/f/6e313f7e1236468e973b/?dl=1)
 
 1. Download the model weights and put them in the 'ckpt'.
-2. `bash generate_sr_big_cli.sh`
+2. `bash generate_sr_big_cli.sh` and input the low resolution image path. 
 3. You can change the "inference_type"(line 27 in generate_sr_big_cli.sh) to "ar"(parallel size=1), "ar2"(parallel size = block_batch(line 28)) or "full"(generate the entire image in one forward). 
 
 ## 🆚 Ultra-high-resolution generation Demo vs other methods
