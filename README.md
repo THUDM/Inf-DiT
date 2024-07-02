@@ -45,7 +45,7 @@ As this is a large-scale pre-trained model that has undergone multiple restarts 
 
 1. Prepare the dataset. We use [webdataset](https://github.com/webdataset/webdataset) to 
 organize data. Only one key "jpg" is needed in webdataset. You can replace WDS_DIR in the train_text2image_sr_big_clip.sh with webdataset path.
-2. train_text2image_sr_big_clip.sh and scripts/d[train_text2image_sr.py](train_text2image_sr.py)s_config_zero_clip.json contain the main hyperparameters, among which ds_config_zero_clip is a parameter related to DeepSpeed. 
+2. train_text2image_sr_big_clip.sh and scripts/ds_config_zero_clip.json contain the main hyperparameters, among which ds_config_zero_clip.json are parameters related to DeepSpeed. 
 3. Run train_text2image_sr_big_clip.sh with slurm or other distributed training tools.
 
 ## 🆚 Ultra-high-resolution generation Demo vs other methods
