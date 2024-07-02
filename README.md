@@ -8,6 +8,7 @@ Official implementation of Inf-DiT: Upsampling Any-Resolution Image with Memory-
 
 ## 🆕 News
 
+* **2024.07.01**: Inf-DiT has been accepted by ECCV2024!
 * **2024.05.20**: This code and model weight is released.
 * **2024.05.08**: This repo is released.
 
@@ -15,8 +16,9 @@ Official implementation of Inf-DiT: Upsampling Any-Resolution Image with Memory-
 
 - [x] Code release
 - [x] Model weight release
-- [ ] Complete the explanation for the inference code and hyperparameter
+- [x] Complete the explanation for the inference code and hyperparameter
 - [ ] Demo
+- [ ] Comfyui
 
 ## 🔆 Abstract
 
@@ -27,7 +29,24 @@ Model weights can be downloaded from [here](https://cloud.tsinghua.edu.cn/f/6e31
 
 1. Download the model weights and put them in the 'ckpt'.
 2. `bash generate_sr_big_cli.sh` and input the low resolution image path. 
-3. You can change the "inference_type"(line 27 in generate_sr_big_cli.sh) to "ar"(parallel size=1), "ar2"(parallel size = block_batch(line 28)) or "full"(generate the entire image in one forward). 
+3. You can change the "inference_type"(line 27 in generate_sr_big_cli.sh) to "ar"(parallel size=1), "ar2"(parallel size = block_batch(line 28)) or "full"(generate the entire image in one forward).
+
+Hyperparameter explanation:
+- `--input-type`: choose between cli and txt(each line is a low resolution image path).
+- `--inference_type`: choose between "ar"(parallel size=1), "ar2"(parallel size = block_batch(line 28)) or "full"(generate the entire image in one forward).
+- `--block_batch`: block parallel size, one forward will generate block_batch\*block_batch blocks. The current version requires that the image(after upsample) side length is divisible by block_batch * 128.
+- `--image-size`: not used.
+- `--out-dir`: output directory.
+- `--infer_sr_scale`: the scale of the super-resolution, the current version only supports 2 and 4.
+
+## 📚 Model Training 
+
+As this is a large-scale pre-trained model that has undergone multiple restarts and data adjustments during training, we cannot guarantee that the training results can be reproduced, it is only for reference implementation. 
+
+1. Prepare the dataset. We use [webdataset](https://github.com/webdataset/webdataset) to 
+organize data. Only one key "jpg" is needed in webdataset. You can replace WDS_DIR in the train_text2image_sr_big_clip.sh with webdataset path.
+2. train_text2image_sr_big_clip.sh and scripts/d[train_text2image_sr.py](train_text2image_sr.py)s_config_zero_clip.json contain the main hyperparameters, among which ds_config_zero_clip is a parameter related to DeepSpeed. 
+3. Run train_text2image_sr_big_clip.sh with slurm or other distributed training tools.
 
 ## 🆚 Ultra-high-resolution generation Demo vs other methods
 

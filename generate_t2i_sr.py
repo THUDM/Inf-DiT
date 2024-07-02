@@ -190,7 +190,7 @@ def add_sample_specific_args(parser):
     group.add_argument('--lr_size', type=int, default=0)
     group.add_argument('--crop_size', type=int, default=0)
     group.add_argument('--inference-batch-size', type=int, default=1)
-    group.add_argument('--round', type=int, default=0)
+    group.add_argument('--round', type=int, default=32)
     group.add_argument('--init_noise', action='store_true')
     group.add_argument('--infer_sr_scale', type=int, default=4)
     group.add_argument('--no_concat', action='store_true')
