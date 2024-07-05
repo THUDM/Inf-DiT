@@ -160,7 +160,7 @@ def main(args, device=torch.device('cuda')):
         ar2 = args.inference_type == 'ar2'
         with torch.no_grad():
             if not collect_attention:
-                samples = net.sample(shape=concat_lr_image.shape, images=concat_lr_image, lr_imgs=lr_image, dtype=concat_lr_image.dtype, device=device, init_noise=args.init_noise, do_concat=not args.no_concat)
+                samples = net.sample(shape=concat_lr_image.shape, images=concat_lr_image, lr_imgs=lr_image, dtype=concat_lr_image.dtype, device=device, init_noise=args.init_noise, do_concat=not args.no_concat, ar=ar, ar2=ar2, block_batch=args.block_batch)
             else:
                 samples, attentions = net.sample(shape=concat_lr_image.shape, images=concat_lr_image, lr_imgs=lr_image,
                                      dtype=concat_lr_image.dtype, device=device, init_noise=args.init_noise,
